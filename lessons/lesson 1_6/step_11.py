@@ -14,14 +14,14 @@ try:
     browser.find_element(By.XPATH, "//input[contains(@placeholder, 'last name')]").send_keys('alex')
     browser.find_element(By.XPATH, "//input[contains(@placeholder, 'email')]").send_keys('alex')
 
-    time.sleep(5)
+    time.sleep(3)
 
     # Отправляем заполненную форму
     browser.find_element(By.CSS_SELECTOR, "button.btn").click()
 
     # Проверяем, что смогли зарегистрироваться
     # ждем загрузки страницы
-    time.sleep(20)
+    time.sleep(3)
 
     # находим элемент, содержащий текст
     welcome_text_elt = browser.find_element(By.TAG_NAME, "h1")
@@ -33,6 +33,6 @@ try:
 
 finally:
     # ожидание чтобы визуально оценить результаты прохождения скрипта
-    time.sleep(10)
+    time.sleep(3)
     # закрываем браузер после всех манипуляций
     browser.quit()
