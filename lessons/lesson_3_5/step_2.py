@@ -21,10 +21,14 @@ class TestMainPage1():
         browser.get(link)
         browser.find_element(By.CSS_SELECTOR, "#login_link")
 
+    #pytest -s -v -m "regression and win10" lessons/lesson_3_5/step_2.py
     @pytest.mark.regression
     @pytest.mark.win10
     def test_guest_should_see_basket_link_on_the_main_page(self, browser):
         browser.get(link)
         browser.find_element(By.CSS_SELECTOR, ".basket-mini .btn-group > a")
-
-#pytest -s -v -m "regression and win10" lessons/lesson_3_5/step_2.py
+    
+    @pytest.mark.xfail
+    def test_guest_should_see_search_button_on_the_main_page(self, browser): 
+        browser.get(link)
+        browser.find_element(By.CSS_SELECTOR, "button.favorite")
