@@ -58,11 +58,10 @@ def test_task_list(browser, fragment):
             accept_answer_button.click()
             print('success button click')
         
-        # элемент найден
+        # проверка сообщения после отправки ответа
         print('already there is succes_message')
         success_message = WebDriverWait(browser, 5).until(ec.presence_of_element_located((By.CLASS_NAME, 'smart-hints__hint')))
         assert success_message.text == 'Correct!', success_message.text
-
 
     except Exception as e:
         assert False, f"Вызвано исключение: {e}"
